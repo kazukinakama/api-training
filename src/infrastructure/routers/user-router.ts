@@ -3,7 +3,7 @@ import { UserRepositoryImpl } from '../../interface/repositories/user-repository
 import { UserController } from '../../interface/controllers/user-controller';
 
 type UserRequest = {
-  name: string,
+  name: string;
 };
 
 export const userRouter = (): express.Router => {
