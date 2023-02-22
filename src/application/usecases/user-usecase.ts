@@ -11,8 +11,7 @@ export class UserUsecase implements IUserUsecase {
   }
 
   public async create(requestBody: UserRequest): Promise<User> {
-    const user = new User();
-    user.name = requestBody.name;
+    const user = new User(requestBody.name);
     return this.userRepository.create(user);
   }
 
@@ -21,9 +20,8 @@ export class UserUsecase implements IUserUsecase {
   }
 
   public async update(id: number, requestBody: UserRequest): Promise<User> {
-    const user = new User();
+    const user = new User(requestBody.name);
     user.id = id;
-    user.name = requestBody.name;
     return this.userRepository.update(user);
   }
 

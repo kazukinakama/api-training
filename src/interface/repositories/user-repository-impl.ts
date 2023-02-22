@@ -3,22 +3,33 @@ import { UserRepository } from './user-repository';
 
 export class UserRepositoryImpl extends UserRepository {
   public async findAll(): Promise<User[]> {
-    return User.findAll();
+    // TODO: DBから取得
+    const user = new User('root');
+    user.id = 1;
+    return [user];
   }
 
   public async create(user: User): Promise<User> {
-    return User.create(user);
+    // TODO: DBで作成
+    return user;
   }
 
   public async findOne(id: number): Promise<User> {
-    return User.findOne(id);
+    // TODO: DBから取得
+    const user = new User('root');
+    user.id = id;
+    return user;
   }
 
   public async update(user: User): Promise<User> {
-    return User.update(user);
+    // TODO: DBで更新
+    return user;
   }
 
   public async delete(id: number): Promise<User> {
-    return User.delete(id);
+    // TODO: DBで削除
+    const user = new User('root');
+    user.id = id;
+    return user;
   }
 }

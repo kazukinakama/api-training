@@ -1,5 +1,4 @@
 import express from 'express';
-import { UserRepositoryImpl } from '../../interface/repositories/user-repository-impl';
 import { UserController } from '../../interface/controllers/user-controller';
 
 type UserRequest = {
@@ -8,8 +7,7 @@ type UserRequest = {
 
 export const userRouter = (): express.Router => {
   const router = express.Router();
-  const userRepository: UserRepositoryImpl = new UserRepositoryImpl();
-  const userController: UserController = new UserController(userRepository);
+  const userController: UserController = new UserController();
 
   router.get('/', async (req, res, next) => {
     try {

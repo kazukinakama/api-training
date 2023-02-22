@@ -1,24 +1,21 @@
 export class User {
-  public id?: number;
-  public name = '';
+  private _id?: number;
 
-  public static findAll(): User[] {
-    return [{ id: 1, name: 'root' }];
+  public constructor(private _name: string) {}
+
+  get id(): number | undefined {
+    return this._id;
   }
 
-  public static create(user: User): User {
-    return user;
+  set id(id: number | undefined) {
+    this._id = id;
   }
 
-  public static findOne(id: number): User {
-    return { id: id, name: 'root' };
+  get name(): string {
+    return this._name;
   }
 
-  public static update(user: User): User {
-    return user;
-  }
-
-  public static delete(id: number): User {
-    return { id: id, name: 'root' };
+  set name(name: string) {
+    this._name = name;
   }
 }
